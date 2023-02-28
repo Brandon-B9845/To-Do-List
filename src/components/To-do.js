@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import List from './List';
 
 function Todo(props) {
 
@@ -9,18 +10,19 @@ function Todo(props) {
         setInputContents(event.target.value)
     }
     function handleClick(){
-        listArr.push(inputContents)
+        // listArr.push(inputContents)
         console.log(listArr)
     }
-
+    useEffect(() => {
+     console.log("rendered")   
+    },[inputContents])
 
     return (
         <div>
             <h2>Things that I need to do still!</h2>
-            <ul>
-
-            </ul>
-            
+            {
+            listArr.map(listItem => <p>{listItem}</p>)
+            }
             <input id="goals-input"
              type="text"
              placeholder='Add an item here'
