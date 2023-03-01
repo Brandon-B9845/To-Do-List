@@ -3,32 +3,40 @@ import { useState, useEffect } from 'react';
 import List from './List';
 
 function Todo(props) {
+    let nextId = 0
+    const [listItems, setListItems] = useState([])
+    const [items, setitems] = useState('')
+    
+    function handler(){
+        setListItems()
+    }
 
-    const [inputContents, setInputContents] = useState('')
-    let listArr = ["fuck", "me" , "daddy"]
-    const handler = (event) => {
-        setInputContents(event.target.value)
-    }
-    function handleClick(){
-        listArr.push(inputContents)
-        console.log(listArr)
-    }
-    useEffect(() => {
-     console.log("rendered")   
-    },[inputContents])
 
     return (
         <div>
             <h2>Things that I need to do still!</h2>
-            {
-            listArr.map(listItem => <List items={listItem} />
-            )}
+            <ul>
+            {listItems.map(item => (
+            <li key={item.id}>{item.items}</li>
+            ))}
+
+            </ul>
             <input id="goals-input"
              type="text"
              placeholder='Add an item here'
-             onChange={handler}
+             value={items}
+             onChange={e => setitems(e.target.value)}
+             
              />
-             <button onClick={handleClick}>Fuck</button>
+             <button onClick={() => {
+                setitems('')
+                setListItems([
+                    ...listItems,
+                    {id: nextId++, items: items}
+                ])
+
+             }}
+             >Fuck</button>
             
         </div>
     );
