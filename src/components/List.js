@@ -13,7 +13,6 @@ function List(props) {
             {props.items ? props.items.map(item => (
             <li key={item.id}>{item.items}</li>
             )) : null}
-            <li>{props.test}</li>
             </ul>
         </div>
     );

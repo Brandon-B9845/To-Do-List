@@ -4,7 +4,7 @@ import List from './List';
 
 function Todo(props) {
     let nextId = 0
-    const [listItems, setListItems] = useState([])
+    const [listItems, setListItems] = useState([''])
     const [items, setitems] = useState('')
 
     useEffect(() => {
