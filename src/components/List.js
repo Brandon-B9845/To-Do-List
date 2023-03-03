@@ -3,9 +3,8 @@ import { useState } from 'react';
 
 function List(props) {
 //     const [mapMe, setMapMe] = useState(props.items)
-// console.log(mapMe)
-    let fuckMe = props.items
-    console.log(fuckMe)
+
+    
 
     return (
         <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import List from './List';
+import Done from './Done';
 
 function Todo(props) {
     let nextId = 0
@@ -20,6 +21,8 @@ function Todo(props) {
         }
        
     }, [listItems])
+
+    let finishedArr= ["this ", "is ", "a ", "test" ]
     
 
     return (
@@ -41,6 +44,8 @@ function Todo(props) {
 
              }}
              >Add item!</button>
+
+            <Done finished={finishedArr}/>
             
         </div>
     );
@@ -48,4 +53,3 @@ function Todo(props) {
 
 export default Todo;
 
-//When I come back I need to figure out why it is that the array element will not properly run through the map to render the list
