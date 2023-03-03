@@ -22,13 +22,17 @@ function Todo(props) {
        
     }, [listItems])
 
-    let finishedArr= ["this ", "is ", "a ", "test" ]
+    let finishedArr= []
     
+    function moveToDone(){
+        finishedArr.push('Test')
+    }
+
 
     return (
         <div>
             <h2>Things that I need to do still!</h2>
-           <List test="test" items={listItems}/>
+           <List handler={moveToDone} test="test" items={listItems}/>
            <input id="goals-input"
              type="text"
              placeholder='Add an item here'

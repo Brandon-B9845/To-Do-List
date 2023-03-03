@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function List(props) {
 //     const [mapMe, setMapMe] = useState(props.items)
@@ -10,7 +10,7 @@ function List(props) {
         <div>
             <ul>
             {props.items ? props.items.map(item => (
-            <li key={item.id}>{item.items}</li>
+            <li onClick={props.handler} key={item.id}>{item.items} </li>
             )) : null}
             </ul>
         </div>
