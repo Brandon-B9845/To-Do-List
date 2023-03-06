@@ -9,26 +9,12 @@ function Todo(props) {
     const [items, setitems] = useState('')
     const [finishedItems, setFinishedItems] = useState([])
 
-    useEffect(() => {
-        const data = localStorage.getItem('TO_DO_LIST')
-        if (data !== undefined){ 
-            setListItems(JSON.parse(data))
-        }
-    }, [])
-    
-    useEffect(() => {
-        if(listItems.length > 0){
-            localStorage.setItem('TO_DO_LIST', JSON.stringify(listItems))
-        }
-       
-    }, [listItems])
-
- 
-    
     function moveToDone(){
-    // setFinishedItems(prevVal => {
-    //     ...prevVal
-    // })
+    setFinishedItems( [
+        ...finishedItems,'Fuck me daddy'
+    ],
+    console.log(finishedItems)
+    )
         
     }
 
@@ -53,7 +39,7 @@ function Todo(props) {
              }}
              >Add item!</button>
 
-            <Done finished={'test'}/>
+            <Done finished={finishedItems}/>
             
         </div>
     );
@@ -61,3 +47,20 @@ function Todo(props) {
 
 export default Todo;
 
+
+
+
+
+    // useEffect(() => {
+    //     const data = localStorage.getItem('TO_DO_LIST')
+    //     if (data !== undefined){ 
+    //         setListItems(JSON.parse(data))
+    //     }
+    // }, [])
+    
+    // useEffect(() => {
+    //     if(listItems.length > 0){
+    //         localStorage.setItem('TO_DO_LIST', JSON.stringify(listItems))
+    //     }
+       
+    // }, [listItems])

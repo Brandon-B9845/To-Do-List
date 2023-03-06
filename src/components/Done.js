@@ -3,17 +3,14 @@ import List from './List';
 import { useState, useEffect } from 'react';
 
 function Done(props) {
-    const [finishedItems, setFinishedItems] = useState([...props.finished])
+    const [finishedItems, setFinishedItems] = useState([])
+
+    useEffect(() => {
+        console.log('cocknballs')
+    }, [finishedItems])
     
    
-useEffect(() => {
-    setFinishedItems([
-        ...finishedItems,
-        {id: 1, items: props.finished}
-    ])
-}, [])
-
-
+console.log(finishedItems)
     return (
         <div>
             <h2>Things I have done!</h2>
