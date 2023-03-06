@@ -6,7 +6,7 @@ function Done(props) {
     const [finishedItems, setFinishedItems] = useState([])
 
     useEffect(() => {
-        console.log('cocknballs')
+        console.log("I wanna die")
     }, [finishedItems])
     
    

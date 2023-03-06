@@ -33,7 +33,7 @@ function Todo(props) {
                 setitems('')
                 setListItems([
                     ...listItems,
-                    {id: nextId += 1, items: items}
+                    {id: nextId + 1, items: items}
                 ])
 
              }}
