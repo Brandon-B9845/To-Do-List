@@ -3,9 +3,9 @@ import List from './List';
 import { useState, useEffect } from 'react';
 
 function Done(props) {
-    const [finishedItems, setFinishedItems] = useState([])
+    const [finishedItems, setFinishedItems] = useState([...props.finished])
     
-   console.log(finishedItems)
+   
 useEffect(() => {
     setFinishedItems([
         ...finishedItems,

@@ -7,6 +7,7 @@ function Todo(props) {
     let nextId = 0
     const [listItems, setListItems] = useState([''])
     const [items, setitems] = useState('')
+    const [finishedItems, setFinishedItems] = useState([])
 
     useEffect(() => {
         const data = localStorage.getItem('TO_DO_LIST')
@@ -22,10 +23,13 @@ function Todo(props) {
        
     }, [listItems])
 
-    let finishedArr= []
+ 
     
     function moveToDone(){
-        finishedArr.push('Test')
+    // setFinishedItems(prevVal => {
+    //     ...prevVal
+    // })
+        
     }
 
 
@@ -49,7 +53,7 @@ function Todo(props) {
              }}
              >Add item!</button>
 
-            <Done finished={finishedArr}/>
+            <Done finished={'test'}/>
             
         </div>
     );
